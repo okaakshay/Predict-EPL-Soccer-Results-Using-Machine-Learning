@@ -19,7 +19,7 @@ As already noted in the note about xG, one way to predict match results is to an
 ### 3.1 Data Sources
 About 760 games worth of lineup data was web scraped from Skysports.com using the BeautifulSoup Library and the corresponding FIFA player ratings data was obtained from a publicly available database on Kaggle. 
 
-### 3.2 Data Preparation and Cleaning
+### 3.2 Data Preparation 
 As FIFA ratings change annually with every new edition, the game lineup data from a particular season was merged with the FIFA game released at the start of the season (18-19 season player lineups merged with FIFA 19 ratings). 
 
 The chosen features were - Overall, Pace, Shooting, Passing, Dribbling, Defending, Physical. 
@@ -31,7 +31,9 @@ The results column was created with three results - HW (Home Win), D (Draw) and 
   <img src="images/SampleDFrow.PNG">
 </p>
 
-## 4. Data Exploration
+## 4. Data Exploration and Preprocessing
+
+### 4.1 Data Exploration 
 Lets take a look at what is the distribution of game results for the dataset being used in this project - 
 
 <p align="center">
@@ -46,7 +48,21 @@ Also lets check the distribution of the "overall" rating variable vs Results -
   <img src="images/BoxplotResultsForOverall.PNG">
 </p>
 
-We see that Home Losses tend to occur mostly when the overall delta is negative i.e. when home team's grade on the overall rating is less than the away team. Home wins and draws are more spread out although home wins seem to tend more towards higher positive overall rating delta values. 
+It is seen that Home Losses tend to occur mostly when the overall delta is negative i.e. when home team's grade on the overall rating is less than the away team. Home wins and draws are more spread out although home wins seem to tend more towards higher positive overall rating delta values. 
+
+We also take a look at the possible correlations between our variables:
+
+<p align="center">
+  <img src="images/Heatmap.PNG">
+</p>
+
+It seems that 5 features are highly correlated, so it would make sense to use a dimentionality reduction technique in the data preprocessing stage.
+
+### 4.2 Data Preprocessing
+
+The feature data is normalized along the columns by using Scikit-learn's RobustScaler transformer. 
+
+Also data is reduced from 7 features to 4 components using Principal Component Analysis using Scikit-learn's PCA Transformer. The total variation captured by these 4 components is 98.4% of the earlier 7 column feature space.  
 
 ## 5. Machine Learning Modeling and Benchmarking 
 
