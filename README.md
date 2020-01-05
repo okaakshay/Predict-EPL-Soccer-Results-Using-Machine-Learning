@@ -76,7 +76,7 @@ To create a more accurate model, TensorFlow and Keras were used to train a Neura
 
 For a base benchmark, a naive prediction model was created which predicts each class with 33.33% rate. The accuracy of this model on the full dataset comes out to be around 32%. 
 
-For the 'gold standard' benchmark, 10 years worth of odds data was collected for Bet365, Bet&Win and Ladbrokes. Data source was http://www.football-data.co.uk/englandm.php. The average accuracy of their predictions is around 54%. 
+For the 'gold standard' benchmark, 10 years worth of odds data was collected for leading betting websites - Bet365, Bet&Win and Ladbrokes. Data source was http://www.football-data.co.uk/englandm.php. The average accuracy of their predictions is around 54%. 
 
 The xG predictions mentioned earlier are not used for benchmarking because their input data comes from in-game actions and it is used more for post game evaluations. 
 
