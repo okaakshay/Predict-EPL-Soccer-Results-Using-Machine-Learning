@@ -70,7 +70,7 @@ The Data is decomposed from 7 features to 4 components using Principal Component
 
 The dataset was split into training and test sets with 2/3rd data points going to the training set and rest to the test set. Using the scikit-learn library, 4 models were trained - Logistic Regression, Random Forests, Naive Bayes and Support Vector Machines (SVM). 
 
-To create a more accurate model, TensorFlow and Keras were used to train a Neural Network. After varying the hyperparameters, the final architecture consisted of one hidden layer with 20 nodes and the optimiser used was 'Adam'. To account for variation in results, the model was run 10 times and the average accuracy was around 57%. This accuracy number was better than all the other models trained earlier. 
+To create a more accurate model, TensorFlow and Keras were used to train a Neural Network. After varying the hyperparameters, the final architecture consisted of one hidden layer and the optimiser used was 'Adam'. To account for variation in results, the model was run 10 times and the average accuracy was around 57%. This accuracy number was better than all the other models trained earlier. 
 
 ### 5.2 Results and Benchmarking
 
