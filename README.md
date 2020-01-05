@@ -62,7 +62,7 @@ It seems that 5 features are highly correlated, so it would make sense to use a 
 
 The feature data is normalized along the columns by using Scikit-learn's RobustScaler transformer. 
 
-Also data is reduced from 7 features to 4 components using Principal Component Analysis using Scikit-learn's PCA Transformer. The total variation captured by these 4 components is 98.4% of the earlier 7 column feature space.  
+The Data is decomposed from 7 features to 4 components using Principal Component Analysis using Scikit-learn's PCA Transformer. The total variation captured by these 4 components is 98.4% of the earlier 7 column feature space.  
 
 ## 5. Machine Learning Modeling and Benchmarking 
 
