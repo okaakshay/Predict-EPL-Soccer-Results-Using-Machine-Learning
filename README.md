@@ -60,17 +60,19 @@ It seems that 5 features are highly correlated, so it would make sense to use a 
 
 ### 4.2 Data Preprocessing
 
-The feature data is normalized along the columns by using Scikit-learn's RobustScaler transformer. 
+The dataset was split into training and test sets with 2/3rd data points going to the training set and rest to the test set. Scikit-learn's train_test_split method was used to create these sets. 
 
-The Data is decomposed from 7 features to 4 components using Principal Component Analysis using Scikit-learn's PCA Transformer. The total variation captured by these 4 components is 98.4% of the earlier 7 column feature space.  
+The training feature data was normalized along the columns by using Scikit-learn's RobustScaler transformer. 
+
+To account for the correlation seen earlier, the training data was decomposed from 7 features to 4 components using Principal Component Analysis using Scikit-learn's PCA Transformer. The total variation captured by these 4 components is around 98.4% of the earlier 7 column feature space.  
 
 ## 5. Machine Learning Modeling and Benchmarking 
 
 ### 5.1 Model Training
 
-The dataset was split into training and test sets with 2/3rd data points going to the training set and rest to the test set. Using the scikit-learn library, 4 models were trained - Logistic Regression, Random Forests, Naive Bayes and Support Vector Machines (SVM). 
+Using the scikit-learn library, 4 models were trained - Logistic Regression, Random Forests, Naive Bayes and Support Vector Machines (SVM). 
 
-To create a more accurate model, TensorFlow and Keras were used to train a Neural Network. After varying the hyperparameters, the final architecture consisted of one hidden layer with 20 nodes and the optimiser used was 'Adam'. To account for variation in results, the model was run 10 times and the average accuracy was around 57%. This accuracy number was better than all the other models trained earlier. 
+To create a more accurate model, TensorFlow and Keras were used to train a Neural Network. After varying the hyperparameters, the final architecture consisted of one hidden layer and the optimiser used was 'Adam'. To account for variation in results, the model was run 10 times and the average accuracy was around 57%. This accuracy number was better than all the other models trained earlier. 
 
 ### 5.2 Results and Benchmarking
 
@@ -88,7 +90,7 @@ The results of the machine learning models were plotted along with the benchmark
 
 ## 6. Conclusion and Future Work
 
-As seen in the comparison chart, the <b> Neural Network exceeded the accuracy level of the sports betting websites  by 3% </b>, despite using far less data and having a more simplistic feature space. Naive Bayes came close second by exceeding the bookmakers benchmark by 1%. 
+As seen in the comparison chart, the <b> Neural Network exceeded the accuracy level of the sports betting websites  by 3% </b>, despite using far less data and having a more simplistic feature space. Naive Bayes came close second by exceeding the bookmakers benchmark by 2%. 
 
 In the future, I plan to explore the following new additions to further enhance the validity and accuracy of the model - 
 * Add more games to the current dataset of 760 games and explore other player attributes as candidates for additon to the feature space.
