@@ -1,5 +1,5 @@
 # Predicting EPL Results using FIFA Player Data
-The English Premier League (EPL) is one of the most watched soccer leagues in the world. The objective of this project is to build a <b> machine learning model </b>which predicts results of upcoming EPL games. The idea is to assess 'strength' of a lineup by summing up FIFA game attribute scores (pace, finishing, defending etc) of the starting XI. The model will attempt to use the difference between the FIFA based 'strengths' of the two teams to predict a result. 
+The English Premier League (EPL) is one of the most watched soccer leagues in the world. The objective of this project is to build a <b> machine learning model which predicts results of upcoming EPL games </b>. The idea is to assess 'strength' of a lineup by summing up FIFA game attribute scores (pace, finishing, defending etc) of the starting XI. The model will attempt to use the difference between the FIFA based 'strengths' of the two teams to predict a result. 
 
 Tools used --> Pandas, Numpy, BeautifulSoup, TensorFlow, Keras, Scikit-learn, Matplotlib
 
