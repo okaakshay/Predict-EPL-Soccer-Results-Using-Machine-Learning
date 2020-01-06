@@ -1,5 +1,5 @@
 # Predicting EPL Results using FIFA Player Data
-The English Premier League (EPL) is one of the most watched soccer leagues in the world. The objective of this project is to build a machine learning model which predicts results of upcoming EPL games. The idea is to assess 'strength' of a lineup by summing up FIFA game attribute scores (pace, finishing, defending etc) of the starting XI. The model will attempt to use the difference between the FIFA based 'strengths' of the two teams to predict a result. 
+The English Premier League (EPL) is one of the most watched soccer leagues in the world. The objective of this project is to build a <b> machine learning model </b>which predicts results of upcoming EPL games. The idea is to assess 'strength' of a lineup by summing up FIFA game attribute scores (pace, finishing, defending etc) of the starting XI. The model will attempt to use the difference between the FIFA based 'strengths' of the two teams to predict a result. 
 
 Tools used --> Pandas, Numpy, BeautifulSoup, TensorFlow, Keras, Scikit-learn, Matplotlib
 
@@ -17,7 +17,7 @@ As already noted in the note about xG, one way to predict match results is to an
 
 ## 3. Data Wrangling 
 ### 3.1 Data Sources
-About 760 games worth of lineup data was web scraped from Skysports.com using the BeautifulSoup Library and the corresponding FIFA player ratings data was obtained from a publicly available database on Kaggle. 
+About 760 games worth of lineup data was <b> web scraped </b> from Skysports.com using the BeautifulSoup Library and the corresponding FIFA player ratings data was obtained from a publicly available database on Kaggle. More details can be viewed in the Web Scraping Juypter Notebook in the repo. 
 
 ### 3.2 Data Preparation 
 As FIFA ratings change annually with every new edition, the game lineup data from a particular season was merged with the FIFA game released at the start of the season (18-19 season player lineups merged with FIFA 19 ratings). 
@@ -50,7 +50,7 @@ Also lets check the distribution of the "overall" rating variable vs Results -
 
 It is seen that Home Losses tend to occur mostly when the overall delta is negative i.e. when home team's grade on the overall rating is less than the away team. Home wins and draws are more spread out although home wins seem to tend more towards higher positive overall rating delta values. 
 
-We also take a look at the possible correlations between our variables:
+We also take a look at the <b> possible correlations </b> between our variables:
 
 <p align="center">
   <img src="images/Heatmap.PNG">
@@ -62,23 +62,23 @@ It seems that 5 features are highly correlated, so it would make sense to use a 
 
 The dataset was split into training and test sets with 2/3rd data points going to the training set and rest to the test set. Scikit-learn's train_test_split method was used to create these sets. 
 
-The training feature data was normalized along the columns by using Scikit-learn's RobustScaler transformer. 
+The training feature data was <b> normalized </b> along the columns by using Scikit-learn's RobustScaler transformer. 
 
-To account for the correlation seen earlier, the training data was decomposed from 7 features to 4 components using Principal Component Analysis using Scikit-learn's PCA Transformer. The total variation captured by these 4 components is around 98.4% of the earlier 7 column feature space.  
+To account for the correlation seen earlier, the training data was decomposed from 7 features to 4 components using <b> Principal Component Analysis </b> using Scikit-learn's PCA Transformer. The total variation captured by these 4 components is around 98.4% of the earlier 7 column feature space.  
 
 ## 5. Machine Learning Modeling and Benchmarking 
 
 ### 5.1 Model Training
 
-Using the scikit-learn library, 4 models were trained - Logistic Regression, Random Forests, Naive Bayes and Support Vector Machines (SVM). 
+Using the scikit-learn library, 4 models were trained - <b> Logistic Regression, Random Forests, Naive Bayes and Support Vector Machines (SVM).</b>
 
-To create a more accurate model, TensorFlow and Keras were used to train a Neural Network. After varying the hyperparameters, the final architecture consisted of one hidden layer and the optimiser used was 'Adam'. To account for variation in results, the model was run 10 times and the average accuracy was around 57%. This accuracy number was better than all the other models trained earlier. 
+To create a more accurate model, <b> TensorFlow and Keras </b> were used to train a <b> Neural Network </b>. After varying the hyperparameters, the final architecture consisted of one hidden layer and the optimiser used was 'Adam'. To account for variation in results, the model was run 10 times and the average accuracy was around 57%. This accuracy number was better than all the other models trained earlier. 
 
 ### 5.2 Results and Benchmarking
 
 For a base benchmark, a naive prediction model was created which predicts each class with 33.33% rate. The accuracy of this model on the full dataset comes out to be around 32%. 
 
-For the 'gold standard' benchmark, 10 years worth of odds data was collected for leading betting websites - Bet365, Bet&Win and Ladbrokes. Data source was http://www.football-data.co.uk/englandm.php. The average accuracy of their predictions is around 54%. 
+For the <b>'gold standard' benchmark </b>, 10 years worth of odds data was collected for leading betting websites - Bet365, Bet&Win and Ladbrokes. Data source was http://www.football-data.co.uk/englandm.php. The average accuracy of their predictions is around 54%. 
 
 The xG predictions mentioned earlier are not used for benchmarking because their input data comes from in-game actions and it is used more for post game evaluations. 
 
